@@ -25,6 +25,11 @@
         <button type="submit">Entrar</button>
     </form>
 </div>
+<!-- Campo para el Captcha -->
+<div class="captcha-container">
+    <p>Resuelve: <span id="captcha-question"></span></p>
+    <input type="number" id="captcha-input" placeholder="Tu respuesta" required>
+</div>
 
 <script>
     document.getElementById('loginForm').addEventListener('submit', function(e) {
