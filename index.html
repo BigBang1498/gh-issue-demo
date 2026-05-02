@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Startup - Intermediación</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f9; }
+        .login-card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 300px; }
+        h2 { text-align: center; color: #333; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .error-msg { color: red; font-size: 0.8rem; display: none; }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <p id="message" class="error-msg">Credenciales incorrectas</p>
+        <button type="submit">Entrar</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Lógica de prueba: falla a propósito si no es 'admin'
+        const user = document.getElementById('username').value;
+        if(user !== 'admin') {
+            document.getElementById('message').style.display = 'block';
+        } else {
+            alert('¡Bienvenido, Founder!');
+        }
+    });
+</script>
+
+</body>
+</html>
